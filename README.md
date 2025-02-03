@@ -15,7 +15,7 @@ Ultimately this project will improve business decision making by automating the 
 
 Below is a simple flow chart showing the overall process:
 
-![Project Flow](/MRDC_flow.png)
+![Project Flow](Images/MRDC_flow.png)
 
 ## Installation Instructions
 1. Clone the github repository:
