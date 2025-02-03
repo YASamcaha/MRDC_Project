@@ -1,0 +1,12 @@
+boto3==1.35.92
+botocore==1.35.92
+numpy==1.26.4
+pandas==2.2.2
+psycopg2==2.9.10
+psycopg2-binary==2.9.10
+PyYAML==6.0.2
+requests==2.27.1
+s3transfer==0.10.4
+SQLAlchemy==2.0.36
+tabula-py==2.10.0
+
