@@ -15,7 +15,7 @@ Ultimately this project will improve business decision making by automating the 
 
 Below is a simple flow chart showing the overall process:
 
-![Project Flow](Images/MRDC_flow.png)
+![Project Flow](images/MRDC_flow.png)
 
 ## Installation Instructions
 1. Clone the github repository:
@@ -36,5 +36,30 @@ Below is a simple flow chart showing the overall process:
      pip install -r requirements.txt
      ```
 4. Final set up:
-   - Create a new database called `sales_data` which will the final destination for all the data
-   - 
+   - Create a new database in `PostgreSQL` called `sales_data` which is where all the data will be loaded to.
+
+## Usage Guide
+The project is comprised of three main files that form the ETL process. Each file has a class that is used in the `mrdc_main` to perform the ETL process for the retail data. 
+1. `database_utils` - This deals with connecting to the different databases and is vital in both the `extraction` and `loading` process.
+2. `data_extraction` - This file is used to extract the data from the different sources and forms part of the `extraction` process.
+3. `data_cleaning` - This file is used to clean the extracted data and prepare it for loading, this covers the `transformation` part of the process.
+
+## File Structure
+***
+
+      |   database_utils.py
+      |   data_cleaning.py
+      |   data_extraction.py
+      |   mrdc_main.py
+      |   requirements.txt
+      |
+      +---credentials
+      |       api_key.yaml
+      |       db_instance_creds.yaml
+      |       local_db_creds.yaml
+      |
+      +---Images
+      |       MRDC_flow.png
+
+
+
