@@ -53,16 +53,21 @@ SELECT
     MAX(LENGTH(country_code::text)) AS country_code_max
 FROM 
 	dim_store_details;
+COMMIT;
 
-
+BEGIN;
+UPDATE dim_store_details
+    SET locality = NULL
+    WHERE longitude = 'N/A';
 UPDATE dim_store_details
     SET longitude = NULL
     WHERE longitude = 'N/A';
-
 UPDATE dim_store_details
     SET latitude = NULL
     WHERE latitude = 'N/A';
+COMMIT;
 
+BEGIN;
 ALTER TABLE dim_store_details
     ALTER COLUMN longitude TYPE NUMERIC USING longitude::DECIMAL,
     ALTER COLUMN locality TYPE VARCHAR(255),
@@ -198,4 +203,3 @@ ALTER TABLE orders_table
     ADD FOREIGN KEY(user_uuid) REFERENCES dim_users(user_uuid),
     ADD FOREIGN KEY(store_code) REFERENCES dim_store_details(store_code);
 COMMIT;
-

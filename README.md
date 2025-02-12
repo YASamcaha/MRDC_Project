@@ -39,14 +39,20 @@ Below is a simple flow chart showing the overall process:
    - Create a new database in `PostgreSQL` called `sales_data` which is where all the data will be loaded to.
 
 ## Usage Guide
-The project is comprised of three main files that form the ETL process. Each file has a class that is used in the `mrdc_main` to perform the ETL process for the retail data. 
-- `database_utils` - This deals with connecting to the different databases and is vital in both the `extraction` and `loading` process.
-- `data_extraction` - This file is used to extract the data from the different sources and forms part of the `extraction` process.
-- `data_cleaning` - This file is used to clean the extracted data and prepare it for loading, this covers the `transformation` part of the process.
+1. The project is comprised of three main files that form the ETL process. Each file has a class that is used in the `mrdc_main` to perform the ETL process for the retail data. 
+   - `database_utils` - This deals with connecting to the different databases and is vital in both the `extraction` and `loading` process.
+   - `data_extraction` - This file is used to extract the data from the different sources and forms part of the `extraction` process.
+   - `data_cleaning` - This file is used to clean the extracted data and prepare it for loading, this covers the `transformation` part of the process.
 
-Once `mrdc_main` completes the data upload the next step is to configure the tables using PostgreSQL.
-To do this use the `sales_data_config` file, this will create the `database schema`. After this has completed the database schema will be similar to the below star schema:
-<img src="Images/MRDC_ERD.pgerd.png" width="700" height="700">
+2. Once `mrdc_main` completes the data upload the next step is to configure the tables using PostgreSQL.
+   To do this use the `sales_data_config` file, this will create the `database schema`. After this has completed the database schema will be similar to the below star schema:
+
+   <img src="Images/MRDC_ERD.pgerd.png" width="700" height="700">
+
+3. Finally, the database can now be used to query the data enabling business questions to be answered. 
+   Please refer to `sales_data_queries.sql` for some examples of how the data can be used for the needs of the business.
+
+
 
 ## File Structure
 ***
@@ -57,6 +63,7 @@ To do this use the `sales_data_config` file, this will create the `database sche
       |   mrdc_main.py
       |   requirements.txt
       |   sales_data_config.sql
+      |   sales_data_queries.sql
       |
       +---credentials
       |       api_key.yaml
