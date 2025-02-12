@@ -15,7 +15,7 @@ Ultimately this project will improve business decision making by automating the 
 
 Below is a simple flow chart showing the overall process:
 
-![Project Flow](images/MRDC_flow.png)
+<img src="images/MRDC_flow.png" width="1000" height="500">
 
 ## Installation Instructions
 1. Clone the github repository:
@@ -40,9 +40,13 @@ Below is a simple flow chart showing the overall process:
 
 ## Usage Guide
 The project is comprised of three main files that form the ETL process. Each file has a class that is used in the `mrdc_main` to perform the ETL process for the retail data. 
-1. `database_utils` - This deals with connecting to the different databases and is vital in both the `extraction` and `loading` process.
-2. `data_extraction` - This file is used to extract the data from the different sources and forms part of the `extraction` process.
-3. `data_cleaning` - This file is used to clean the extracted data and prepare it for loading, this covers the `transformation` part of the process.
+- `database_utils` - This deals with connecting to the different databases and is vital in both the `extraction` and `loading` process.
+- `data_extraction` - This file is used to extract the data from the different sources and forms part of the `extraction` process.
+- `data_cleaning` - This file is used to clean the extracted data and prepare it for loading, this covers the `transformation` part of the process.
+
+Once `mrdc_main` completes the data upload the next step is to configure the tables using PostgreSQL.
+To do this use the `sales_data_config` file, this will create the `database schema`. After this has completed the database schema will be similar to the below star schema:
+<img src="images/MRDC_ERD.pgerd.png" width="700" height="700">
 
 ## File Structure
 ***
@@ -52,6 +56,7 @@ The project is comprised of three main files that form the ETL process. Each fil
       |   data_extraction.py
       |   mrdc_main.py
       |   requirements.txt
+      |   sales_data_config.sql
       |
       +---credentials
       |       api_key.yaml
@@ -60,6 +65,7 @@ The project is comprised of three main files that form the ETL process. Each fil
       |
       +---Images
       |       MRDC_flow.png
+      |       MRDC_ERD.pgerd.png
 
 
 

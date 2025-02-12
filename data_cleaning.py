@@ -79,7 +79,12 @@ class DataCleaning:
         #Removing unwanted special characters from card
         card_df['card_number'] = card_df['card_number'].replace('\?','',regex=True)
         #Removing non numeric card numbers
-        card_df.card_number = pd.to_numeric(card_df.card_number, errors='coerce')
+        card_df['card_number'] = card_df['card_number'].astype(str)
+        regex = '^[ 0-9]+$'
+        try:
+            card_df.loc[~card_df['card_number'].str.match(regex),'card_number'] = np.nan
+        except TypeError:
+            pass
         #removing resultant NULL values
         card_df.dropna(axis=0, inplace=True)
         #Setting the card_Details column as int
