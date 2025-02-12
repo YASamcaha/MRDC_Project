@@ -15,7 +15,7 @@ Ultimately this project will improve business decision making by automating the 
 
 Below is a simple flow chart showing the overall process:
 
-<img src="images/MRDC_flow.png" width="1000" height="500">
+<img src="Images/MRDC_flow.png" width="1000" height="500">
 
 ## Installation Instructions
 1. Clone the github repository:
@@ -46,7 +46,7 @@ The project is comprised of three main files that form the ETL process. Each fil
 
 Once `mrdc_main` completes the data upload the next step is to configure the tables using PostgreSQL.
 To do this use the `sales_data_config` file, this will create the `database schema`. After this has completed the database schema will be similar to the below star schema:
-<img src="images/MRDC_ERD.pgerd.png" width="700" height="700">
+<img src="Images/MRDC_ERD.pgerd.png" width="700" height="700">
 
 ## File Structure
 ***
